@@ -1,0 +1,26 @@
+filebeat:
+  logging.level: error
+  inputs:
+    - type: log
+      enabled: true
+      json.add_error_key: true
+      json.expand_keys: true
+      json.keys_under_root: true
+      json.overwrite_keys: true
+      tags: [ 'laravel', '<app_name>' ]
+      paths:
+        - '<logs_path_pattern>'
+
+cloud.id: '${ES_CLOUD_ID}'
+cloud.auth: '${ES_CLOUD_AUTH}'
+
+output:
+  elasticsearch:
+    indices:
+      - when.contains:
+          tags: '<app_name>'
+        index: 'filebeat-app-<app_name>-%{+yyyy.MM.dd}'
+
+logging:
+  files:
+    rotateeverybytes: 10485760
