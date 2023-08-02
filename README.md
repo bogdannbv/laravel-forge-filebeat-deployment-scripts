@@ -4,9 +4,9 @@
 
 Download the repository and extract it.
 ```shell
-mkdir ./filebeat-deployment \
- && curl -L https://github.com/bogdannbv/laravel-forge-filebeat-deployment-scripts/archive/refs/heads/main.tar.gz | tar -xz -C ./filebeat-deployment --strip-components=1 \
- && cd ./filebeat-deployment
+mkdir /tmp/filebeat-deployment \
+ && cd /tmp/filebeat-deployment \
+ && curl -L https://github.com/bogdannbv/laravel-forge-filebeat-deployment-scripts/archive/refs/heads/main.tar.gz | tar -xz -C /tmp/filebeat-deployment --strip-components=1
 ```
 
 Run the `install.sh` script
