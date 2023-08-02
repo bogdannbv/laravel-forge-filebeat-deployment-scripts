@@ -54,7 +54,7 @@ fi
 
 echo "Installing filebeat..."
 curl -L -O "https://artifacts.elastic.co/downloads/beats/filebeat/filebeat-${VERSION}-amd64.deb"
-#sudo dpkg -i filebeat-${VERSION}-amd64.deb
+sudo dpkg -i filebeat-${VERSION}-amd64.deb
 rm filebeat-${VERSION}-amd64.deb
 separator;
 
@@ -76,4 +76,5 @@ echo "After verifying the configuration, run the following commands:
 systemctl daemon-reload
 systemctl enable filebeat.service
 systemctl start filebeat.service
+journalctl -u filebeat.service
 "
