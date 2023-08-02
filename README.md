@@ -1,2 +1,1 @@
-# laravel-ubuntu-filebeat-deployment-scripts
-An extremely specific repository
+# An extremely specific repository
